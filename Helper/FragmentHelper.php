@@ -71,10 +71,7 @@ class FragmentHelper
 
         return $this->templating->render(
             $this->fragmentServices[$type]->getTemplate(),
-            array(
-                'fragment' => $fragment,
-                'fields' => $fragment->getSettings(),
-            )
+            $this->fragmentServices[$type]->getContent($fragment)
         );
     }
 }

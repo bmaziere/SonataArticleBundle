@@ -68,6 +68,17 @@ abstract class AbstractFragmentService implements FragmentServiceInterface
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getContent(FragmentInterface $fragment)
+    {
+        return array(
+            'fragment' => $fragment,
+            'fields' => $fragment->getSettings(),
+        );
+    }
+
+    /**
      * @param FragmentInterface $fragment
      */
     public function prePersist(FragmentInterface $fragment)

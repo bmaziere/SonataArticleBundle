@@ -60,6 +60,7 @@ class FragmentHelperTest extends \PHPUnit_Framework_TestCase
 
         $fragmentService = $this->createMock('Sonata\ArticleBundle\FragmentService\FragmentServiceInterface');
         $fragmentService->expects($this->once())->method('getTemplate')->will($this->returnValue('template.html.twig'));
+        $fragmentService->expects($this->once())->method('getContent')->with($fragment)->will($this->returnValue(array()));
 
         $this->fragmentHelper->setFragmentServices(array('foo.bar' => $fragmentService));
         $this->fragmentHelper->render($fragment);

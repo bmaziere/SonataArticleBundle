@@ -46,6 +46,15 @@ interface FragmentServiceInterface
     public function buildForm(FormMapper $form, FragmentInterface $fragment);
 
     /**
+     * Gets content to render fragment.
+     *
+     * @param FragmentInterface $fragment
+     *
+     * @return array
+     */
+    public function getContent(FragmentInterface $fragment);
+
+    /**
      * Validates the fragment (you'll need to add your violations through $errorElement).
      *
      * @param ErrorElement $errorElement
